@@ -19,9 +19,7 @@ class _HomePageState extends State<HomePage> {
           children: [
             Row(
               children: [
-                Expanded(
-                  child: Text("Training", style: TextStyle(fontSize: 30, color: colors.AppColor.homePageTitle, fontWeight: FontWeight.w700)),
-                ),
+                Expanded(child: Text("Training", style: TextStyle(fontSize: 30, color: colors.AppColor.homePageTitle, fontWeight: FontWeight.w700))),
                 Icon(Icons.arrow_back_ios, size: 20, color: colors.AppColor.homePageIcons),
                 SizedBox(width: 10),
                 Icon(Icons.calendar_today_outlined, size: 20, color: colors.AppColor.homePageIcons),
@@ -32,9 +30,7 @@ class _HomePageState extends State<HomePage> {
             SizedBox(height: 20),
             Row(
               children: [
-                Expanded(
-                  child: Text('Your program', style: TextStyle(fontSize: 20, color: colors.AppColor.homePageSubtitle, fontWeight: FontWeight.w700)),
-                ),
+                Expanded(child: Text('Your program', style: TextStyle(fontSize: 20, color: colors.AppColor.homePageSubtitle, fontWeight: FontWeight.w700))),
                 Text('Details', style: TextStyle(fontSize: 16, color: colors.AppColor.homePageDetail)),
                 SizedBox(width: 10),
                 Icon(Icons.arrow_forward, size: 16, color: colors.AppColor.homePageIcons),
@@ -84,6 +80,53 @@ class _HomePageState extends State<HomePage> {
                     )
                   ],
                 ),
+              ),
+            ),
+            SizedBox(height: 5),
+            SizedBox(
+              height: 180,
+              width: MediaQuery.of(context).size.width,
+              child: Stack(
+                children: [
+                  Container(
+                    width: MediaQuery.of(context).size.width,
+                    height: 120,
+                    margin: EdgeInsets.only(top: 30),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      image: DecorationImage(image: AssetImage("card.jpg"), fit: BoxFit.cover),
+                      boxShadow: [
+                        BoxShadow(
+                          color: colors.AppColor.gradientSecond,
+                          blurRadius: 20,
+                          offset: Offset(2, 6),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width / 4,
+                    margin: EdgeInsets.only(left: 30),
+                    child: Image.asset("figure.png"),
+                  ),
+                  Align(
+                    alignment: Alignment.centerRight,
+                    child: Container(
+                      width: MediaQuery.of(context).size.width / 2,
+                      margin: EdgeInsets.only(top: 40, bottom: 40, right: 20),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text('You are doing great', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: colors.AppColor.homePageDetail)),
+                          SizedBox(height: 10),
+                          Text('Keep it up', style: TextStyle(fontSize: 16, color: colors.AppColor.homePagePlanColor)),
+                          Text('and stick to your plan', style: TextStyle(fontSize: 16, color: colors.AppColor.homePagePlanColor)),
+                        ],
+                      ),
+                    ),
+                  )
+                ],
               ),
             )
           ],
